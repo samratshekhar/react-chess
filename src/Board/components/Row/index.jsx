@@ -4,9 +4,10 @@ import Tile from '../Tile';
 
 export default class Row extends Component {
     renderTiles() {
+        const { index } = this.props;
         const tiles = [];
         for (let i = 0; i < 7; i++) {
-            tiles.push(<Tile />);
+            tiles.push(<Tile isBlack={(i + index) % 2 !== 0} />);
         }
         return tiles;
     }
